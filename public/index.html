@@ -4,165 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Egresos</title>
+    <title>Autenticación</title>
+    <style>
+        button {
+            padding: 5px;
+            color: beige;
+            background-color: brown;
+            margin-top: 10px;
+        }
+    </style>
     <link href="css/estilos.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="cabecero">
-        <div class="registro">
-            <div class="registro_titulo">
-                Registro de ingresos y egresos
-            </div>
-            <form class="formulario_1" onsubmit="return false">
-                <div class="entidad" id="enseg">
-                    <label for="ent">Entidad Seguida</label>
-                    <select name="entidad_seguida" id="ent">
-                        <option value="Enrique">Enrique</option>
-                        <option value="Aldabas">Aldabas</option>
-                        <option value="Drukpa">Drukpa</option>
-                    </select>
-                </div>
-                <div class="fecha">
-                    <div>
-                        <label for="fechaIni">Desde</label>
-                        <input type="text" id="fechaIni">
-                    </div>
-                    <div>
-                        <label for="fechaFin">Hasta</label>
-                        <input type="text" id="fechaFin">
-                    </div>
-                </div>
-                <div class="ingresos">
-                    <div>
-                        <label for="tip_ing">Tipo Ingreso</label>
-                    <select name="tipo_ingreso" id="tip_ing">
-                        <option value="Sueldo">Sueldo</option>
-                        <option value="Jubilación">Jubilación</option>
-                        <option value="Coaching">Coaching</option>
-                    </select>
-                    </div>
-                    <div>
-                        <label for="ingreso">Ingreso</label>
-                        <input type="number" step="any" id="ingreso">
-                    </div>
-                    <div>
-                        <input type="number" step="any" id="porc_ingre">
-                        <label for="porc_ingre">%</label>
-                    </div>
-                </div>
-                <div class="egresos">
-                    <div>
-                        <label for="tip_egr">Tipo Egreso</label>
-                    <select name="tipo_egreso" id="tip_egr">
-                        <option value="Comida">Comida</option>
-                        <option value="Transporte">Transporte</option>
-                        <option value="Educación">Educación</option>
-                    </select>
-                    </div>
-                    <div>
-                        <label for="egreso">Egreso</label>
-                        <input type="number" step="any" id="egreso">
-                    </div>
-                    <div>
-                        <input type="number" step="any" id="porc_egre">
-                        <label for="porc_egre">%</label>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <header>
+        <h1>registro de Ingresos y Egresos</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="registro.html">Registro</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="Ajustes.html">Ajustes</a>
+    </nav>
+
+    <h1>Google Sign-in</h1>
+    <hr>
+
+    <div id="g_id_onload"
+         data-client_id="574817756908-c5b3bdpng8gtlkrogmcbnsm1vvc9grtc.apps.googleusercontent.com"         
+         data-auto_prompt="false"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
     </div>
 
-    <div></div>
+    <button id="google_signout">
+        Signout
+    </button>
 
-    <div class="agregar">
-        <form class="formulario-2" id="forma">
-            <div class="agregar_contenedor">
-                <div>
-                    <select class="agregar_tipo" id="tipo">
-                        <option value="ingreso" selected>+</option>
-                        <option value="egreso">-</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="fechaAct">Fecha</label>
-                    <input type="date" id="fechaAct">
-                </div>
-                <div>
-                    <label for="categoria">Categoria</label>
-                    <select class="agregar_categoria" id="categoria">
-                        <option selected>Seleccione categoría</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="valor">Monto</label>
-                    <input type="number" class="agregar_valor" placeholder="Valor" id="valor" step="any"/>
-                </div>                
-                <button class="agregar_btn" onclick="agregarDato()">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                </button>
-            </div>
-        </form>
-    </div>
-    
+    <footer>
+        Todos los derechos reservados
+    </footer>
 
-    <div class="contenedor limpiarEstilos">
-        <div class="ingreso">
-            <h2 class="ingreso_titulo">Ingresos</h2>
-            <div id="lista-ingresos">
-                <div class="elemento limpiarEstilos">
-                    <div class="elemento_descripcion">Salario</div>
-                    <div class="derecha limpiarEstilos">
-                        <div class="elemento_valor">+ 2,500.00</div>
-                        <div class="elemento_eliminar">
-                            <button class="elemento_eliminar--btn">
-                                <ion-icon name='close-circle-outline'></ion-icon>
-                            </button>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="elemento limpiarEstilos">
-                    <div class="elemento_descripcion">Venta coche</div>
-                    <div class="derecha limpiarEstilos">
-                        <div class="elemento_valor">+ 1,500.00</div>
-                        <div class="elemento_eliminar">
-                            <button class="elemento_eliminar--btn">
-                                <ion-icon name='close-circle-outline'></ion-icon>
-                            </button>
-                        </div>
-                    </div>                    
-                </div>                 
-            </div>
-        </div>
-        <div class="egreso">
-            <h2 class="egreso_titulo">Egresos</h2>
-            <div id="lista-egresos">
-                <div class="elemento limpiarEstilos">
-                    <div class="elemento_descripcion">Renta apartamento</div>
-                    <div class="derecha limpiarEstilos">
-                        <div class="elemento_valor">- 900.00</div>
-                        <div class="elemento_porcentaje">21%</div>
-                        <div class="elemento_eliminar">
-                            <button class="elemento_eliminar--btn">
-                                <ion-icon name='close-circle-outline'></ion-icon>
-                            </button>
-                        </div> 
-                    </div>
-                </div>
-                <div class="elemento limpiarEstilos">
-                    <div class="elemento_descripcion">Ropa</div>
-                    <div class="derecha limpiarEstilos">
-                        <div class="elemento_valor">- 1,100.00</div>
-                        <div class="elemento_porcentaje">25%</div>
-                        <div class="elemento_eliminar">
-                            <button class="elemento_eliminar--btn">
-                                <ion-icon name='close-circle-outline'></ion-icon>
-                            </button>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script>
+        function handleCredentialResponse(response) {
+            
+            //Google Token: ID_TOKEN
+            // console.log('id_token: ', response.credential);
+            const body = { id_token: response.credential}
+
+            fetch(window.location.hostname.includes('localhost')?
+                'http://localhost:8080/api/auth/google' : 'https://quicherat-basic-restserver.herokuapp.com/api/auth/google', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            })
+                .then( resp => resp.json() )
+                .then( resp => {
+                    console.log(resp)
+                    localStorage.setItem('email', resp.usuario.correo)
+                })
+                .catch (console.warn);
+            
+        }
+
+        const button = document.getElementById('google_signout');
+        button.onclick = () => {
+            console.log(google.accounts.id);
+            google.accounts.id.disableAutoSelect()
+
+            google.accounts.id.revoke( localStorage.getItem('email'), done => {
+                localStorage.clear();
+                location.reload();
+            })
+        }
+        
+    </script>
+
+
+
 
     <script src="js/Dato.js"></script>
     <script src="js/Egreso.js"></script>
