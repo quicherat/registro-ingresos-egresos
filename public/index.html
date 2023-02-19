@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autenticación</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <style>
         button {
             padding: 5px;
@@ -16,36 +17,44 @@
     <link href="css/estilos.css" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1>registro de Ingresos y Egresos</h1>
+    <header class="titulo">
+        <h1>Ingreso de Usuarios</h1>
     </header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="registro.html">Registro</a>
-        <a href="consulta.html">Consulta</a>
-        <a href="Ajustes.html">Ajustes</a>
-    </nav>
-
-    <h1>Google Sign-in</h1>
-    <hr>
-
-    <div id="g_id_onload"
-         data-client_id="574817756908-c5b3bdpng8gtlkrogmcbnsm1vvc9grtc.apps.googleusercontent.com"         
-         data-auto_prompt="false"
-         data-callback="handleCredentialResponse">
-    </div>
-    <div class="g_id_signin"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left">
+    <div class="cont-nav">
+        <nav class="nav-principal fila-nav" >
+            <a href="index.html">Ingreso</a>
+            <a href="registro.html">Registro</a>
+            <a href="consulta.html">Consulta</a>
+            <a href="Ajustes.html">Ajustes</a>
+        </nav>
     </div>
 
-    <button id="google_signout">
-        Signout
-    </button>
+    <main>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque a consectetur blanditiis adipisci voluptas ipsa ab tempora recusandae laboriosam, earum qui deleniti cupiditate ipsam quod officia! Debitis, iusto reiciendis?
+    </main>
+
+    <section>
+        <h1>Google Sign-in</h1>
+        <hr>
+    
+        <div id="g_id_onload"
+             data-client_id="574817756908-c5b3bdpng8gtlkrogmcbnsm1vvc9grtc.apps.googleusercontent.com"         
+             data-auto_prompt="false"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="rectangular"
+            data-logo_alignment="left">
+        </div>
+    
+        <button id="google_signout">
+            Signout
+        </button>
+    </section>
 
     <footer>
         Todos los derechos reservados

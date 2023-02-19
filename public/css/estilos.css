@@ -4,6 +4,38 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.titulo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.cont-nav {
+    border-color: #e1e1e1;
+    border-top-style: solid;
+    border-width: 1px;
+    
+}
+.nav-principal {    
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.fila-nav {
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+section {
+    margin: 50px;
+
+}
+
 body {
     color: #555;
     font-family: Open Sans;
